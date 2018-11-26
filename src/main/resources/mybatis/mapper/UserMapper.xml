@@ -24,9 +24,9 @@
     <insert id="update" parameterType="com.example.sharding.jdbc.demo.model.UserEntity" >
         INSERT INTO
         t_order
-        (order_id,user_id,userName,passWord,user_sex)
+        (order_id,user_id,userName,passWord,user_sex,nick_name)
         VALUES
-        (#{order_id},#{user_id},#{userName}, #{passWord}, #{userSex})
+        (#{order_id},#{user_id},#{userName}, #{passWord}, #{userSex}, #{nickName})
     </insert>
 
 </mapper>
