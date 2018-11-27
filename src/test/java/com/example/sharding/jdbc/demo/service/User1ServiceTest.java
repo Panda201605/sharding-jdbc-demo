@@ -35,12 +35,18 @@ public class User1ServiceTest {
     @Test
     public void updateTransactional() {
 
+        //random.nextLong()会有负数，取模还会有负数。 random.nextInt()会有负数，random.nextInt(int args)不会有负数
         Random random = new Random();
+        Long id = Math.abs(random.nextLong());
+        Long userId = Math.abs(random.nextLong());
+        Long orderId = Math.abs(random.nextLong());
+//        System.out.println("id: " + id + " userId: " + userId + " orderId: " + orderId);
+
         UserEntity user = new UserEntity();
-        user.setId(random.nextLong());
+        user.setId(id);
         user.setNickName("pan");
-        user.setUser_id(random.nextLong());
-        user.setOrder_id(random.nextLong());
+        user.setUser_id(userId);
+        user.setOrder_id(orderId);
         user.setPassWord("123456");
         user.setUserName("name");
         user.setUserSex(UserSexEnum.MAN);
