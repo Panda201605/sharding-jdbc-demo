@@ -24,7 +24,7 @@ public class User1Service {
     public void updateTransactional(UserEntity user) {
         try{
             user1Mapper.update(user);
-            log.error(String.valueOf(user));
+            log.info(String.valueOf(user));
         }catch(Exception e){
             log.error("find exception!");
             throw e;   // 事物方法中，如果使用trycatch捕获异常后，需要将异常抛出，否则事物不回滚。
